@@ -4,9 +4,146 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body {
+        margin: 0;
+      }
+      #section1 {
+        text-align: center;
+
+        overflow: hidden;
+      }
+
+      div.slides-contain {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 500px;
+      }
+
+      #s1 {
+        background-image: url("assets/images/slide1.jpg");
+        background-size: cover;
+      }
+
+      #s2 {
+        background-image: url("assets/images/slide2.jpg");
+        background-size: cover;
+      }
+
+      .slides-wraptext {
+        background-color: white;
+        display: inline-block;
+        width: 50%;
+        margin: auto;
+        padding: 20px auto;
+        border-radius: 25px;
+      }
+
+      h1.slides,
+      p.slides {
+        margin: 20px 20px;
+      }
+
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      .active,
+      .dot:hover {
+        background-color: #717171;
+      }
+    </style>
   </head>
   <body>
-    <h1>Homepage</h1>
+    <header>
+      <h1 style="margin: 0">L Corporation</h1>
+      <nav>
+        <ol id="nav">
+          <li class="nav" style="background-color: gray">
+            <a class="nav" href="">Home</a>
+          </li>
+          <li class="nav"><a class="nav" href="">Portfolio</a></li>
+          <li class="nav"><a class="nav" href="">Contact</a></li>
+        </ol>
+      </nav>
+    </header>
+    <main>
+      <div id="section1">
+        <div class="slides-contain" id="s1">
+          <div class="slides-wraptext">
+            <h1 class="slides">Chellanges is What Drive Us!</h1>
+            <p class="slides">
+              Learn more about us and take your adventerous journey of being
+              number 1 brand through the use of technology and innovation that
+              you are thinking! WE CAN HELP YOU ACHIEVE ALL OF THAT!
+            </p>
+          </div>
+          <div style="text-align: center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+          </div>
+        </div>
+        <div class="slides-contain" id="s2">
+          <div class="slides-wraptext">
+            <h1 class="slides">We are high collaborative team!</h1>
+            <p class="slides">
+              Learn more about us and take your adventerous journey of being
+              number 1 brand through the use of technology and innovation that
+              you are thinking! WE CAN HELP YOU ACHIEVE ALL OF THAT!
+            </p>
+          </div>
+          <div style="text-align: center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>Copyright L Corporation</footer>
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      // Next/previous controls
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      // Thumbnail image controls
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides-contain");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "flex";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>
