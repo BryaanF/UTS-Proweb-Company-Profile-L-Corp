@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      #portfolio-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 30px;
+      }
+
+      .portfolio {
+        width: 350px;
+        height: 250px;
+        overflow: hidden;
+        display: flex;
+
+        justify-content: center;
+      }
+
+      #p1 {
+        background-image: url("assets/images/portfolio1.jpg");
+        background-size: cover;
+      }
+
+      #p2 {
+        background-image: url("assets/images/portfolio2.jpg");
+        background-size: cover;
+      }
+
+      #p3 {
+        background-image: url("assets/images/portfolio3.jpg");
+        background-size: cover;
+      }
+
+      .portfolio:hover .article {
+        visibility: visible;
+      }
+
+      article {
+        align-self: center;
+        text-align: center;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 10px;
+        visibility: hidden;
+        padding: 10px;
+      }
+
+      button {
+        width: 50%;
+        align-self: center;
+        background-color: black;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      main {
+        min-height: 75vh;
+      }
+
+      @media only screen and (max-width: 800px) {
+        a.nav {
+          font-size: 14px;
+        }
+        header {
+          flex-direction: column;
+        }
+        .portfolio {
+          height: 300px;
+        }
+      }
+
+      @media only screen and (max-width: 1100px) {
+        #portfolio-wrapper {
+          flex-direction: column;
+          align-items: center;
+        }
+        .portfolio {
+          margin: 30px auto;
+          width: 80%;
+        }
+
+        .article {
+          visibility: visible;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 style="margin: 0 20px">L Corporation</h1>
+      <nav>
+        <ol id="nav">
+          <li class="nav">
+            <a class="nav" href="index.html">Home</a>
+          </li>
+          <li class="nav" style="background-color: gray">
+            <a class="nav" href="portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav"><a class="nav" href="contact.html">Contact</a></li>
+        </ol>
+      </nav>
+    </header>
+    <main>
+      <h1 style="text-align: center">Portfolio</h1>
+      <div id="portfolio-wrapper">
+        <div class="portfolio" id="p1">
+          <article class="article">
+            <h2>Charity App</h2>
+            <p>
+              The site that help people to gain charity in public or doing
+              personal charity
+            </p>
+            <button>View Project</button>
+          </article>
+        </div>
+        <div class="portfolio" id="p2">
+          <article class="article">
+            <h2>Marketplace App</h2>
+            <p>
+              The site that help people to buy and sell some of their good
+              stuff!
+            </p>
+            <button>View Project</button>
+          </article>
+        </div>
+        <div class="portfolio" id="p3">
+          <article class="article">
+            <h2>Company Profile App</h2>
+            <p>
+              The site that help people to understand what value and what it's
+              company standing for, their value and their goal!
+            </p>
+            <button>View Project</button>
+          </article>
+        </div>
+      </div>
+    </main>
+    <footer>Copyright © L Corporation</footer>
+    <script></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -7,9 +7,6 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/style.css" />
     <style>
-      body {
-        margin: 0;
-      }
       #section1 {
         text-align: center;
 
@@ -30,6 +27,11 @@
 
       #s2 {
         background-image: url("assets/images/slide2.jpg");
+        background-size: cover;
+      }
+
+      #s3 {
+        background-image: url("assets/images/slide3.jpg");
         background-size: cover;
       }
 
@@ -62,76 +64,284 @@
       .dot:hover {
         background-color: #717171;
       }
+
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      #section2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #section3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      table,
+      tr,
+      th,
+      td {
+        border: 3px solid black;
+        border-collapse: collapse;
+      }
+
+      th {
+        padding: 10px;
+      }
+
+      th#vertical {
+        width: 100px;
+      }
+      th.horizontal {
+        width: 350px;
+      }
+      td {
+        padding: 5px 10px;
+      }
+
+      #contactusnow {
+        background-color: black;
+        color: white;
+        padding: 25px;
+        border-radius: 10px;
+      }
+
+      #contactusnow:hover {
+        background-color: white;
+        border: 5px solid black;
+        color: black;
+      }
+
+      a.nav {
+        text-decoration: none;
+        color: white;
+        margin: auto;
+        font-size: 20px;
+      }
+      ol#nav {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+      }
+
+      li.nav {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        margin: auto 10px;
+        align-content: center;
+        border-radius: 20px;
+      }
+
+      li.nav:hover {
+        background-color: gray;
+      }
+
+      @media only screen and (max-width: 800px) {
+        video {
+          width: 480px;
+          height: 360px;
+        }
+
+        .slides-wraptext {
+          width: 75%;
+        }
+
+        a.nav {
+          font-size: 14px;
+        }
+        header {
+          flex-direction: column;
+        }
+
+        th {
+          padding: 0px;
+        }
+
+        td {
+          padding: 0px;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        video {
+          width: 360px;
+          height: 240px;
+        }
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
     </style>
   </head>
   <body>
     <header>
-      <h1 style="margin: 0">L Corporation</h1>
+      <h1 style="margin: 0 20px">L Corporation</h1>
       <nav>
         <ol id="nav">
           <li class="nav" style="background-color: gray">
-            <a class="nav" href="">Home</a>
+            <a class="nav" href="index.html">Home</a>
           </li>
-          <li class="nav"><a class="nav" href="">Portfolio</a></li>
-          <li class="nav"><a class="nav" href="">Contact</a></li>
+          <li class="nav">
+            <a class="nav" href="portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav"><a class="nav" href="contact.html">Contact</a></li>
         </ol>
       </nav>
     </header>
     <main>
+      <!-- section 1 -->
       <div id="section1">
-        <div class="slides-contain" id="s1">
+        <div class="slides-contain fade" id="s1">
           <div class="slides-wraptext">
             <h1 class="slides">Chellanges is What Drive Us!</h1>
             <p class="slides">
               Learn more about us and take your adventerous journey of being
               number 1 brand through the use of technology and innovation that
-              you are thinking! WE CAN HELP YOU ACHIEVE ALL OF THAT!
+              you are thinking! <b>WE CAN HELP YOU ACHIEVE ALL OF THAT!</b>
             </p>
           </div>
           <div style="text-align: center">
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
           </div>
         </div>
-        <div class="slides-contain" id="s2">
+        <div class="slides-contain fade" id="s2">
           <div class="slides-wraptext">
-            <h1 class="slides">We are high collaborative team!</h1>
+            <h1 class="slides">
+              Strive to Give Our Best to Make You Satisfied!
+            </h1>
             <p class="slides">
-              Learn more about us and take your adventerous journey of being
-              number 1 brand through the use of technology and innovation that
-              you are thinking! WE CAN HELP YOU ACHIEVE ALL OF THAT!
+              Whatever you need, we will help to provide the best product we can
+              deliver right to you, we will try our best and have same spirit
+              like you to build your brand value! Is everything about yours!
+              <b>WE STRIVE FOR YOUR SUCCESS!</b>
             </p>
           </div>
           <div style="text-align: center">
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+        </div>
+        <div class="slides-contain fade" id="s3">
+          <div class="slides-wraptext">
+            <h1 class="slides">We Are High Collaborative Team!</h1>
+            <p class="slides">
+              Our team have 1 goal to make you a great digital product that have
+              great value to your business!
+              <b
+                >WE ARE VERY COMMITED TO DO WHAT WE DO AND LIVE WITHIN OUR
+                VALUES!</b
+              >
+            </p>
+          </div>
+          <div style="text-align: center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
           </div>
         </div>
       </div>
+
+      <!-- section 2 -->
+      <div id="section2">
+        <h1 style="text-align: center">Who We Are?</h1>
+        <video
+          style="box-shadow: 0px 0px 5px 0px"
+          width="720"
+          height="480"
+          controls
+          autoplay
+          muted
+        >
+          <source src="assets/videos/software_house.mp4" type="video/mp4" />
+
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- section 3 -->
+      <div id="section3">
+        <h1 style="text-align: center">
+          Benefits You Get from Working with Us!
+        </h1>
+        <table>
+          <tr>
+            <th id="vertical"></th>
+            <th class="horizontal">With Us</th>
+            <th class="horizontal">Others</th>
+          </tr>
+          <tr>
+            <th>Reliable</th>
+            <td>Very reliable, our team consist of very talented people!</td>
+            <td>
+              Not many have reliable team and this can cause bad product output.
+            </td>
+          </tr>
+          <tr>
+            <th>Responsiveness</th>
+            <td>
+              Very responsive, our team ready to help you immedieately anytime
+              in during work hour. There are 2 teams that will help you solve
+              that either from :
+              <li>Customer Services,</li>
+              <li>Technical Support, or</li>
+              <li>Our super developer :)</li>
+            </td>
+            <td>
+              Can be not responsive or slow, this lead to frustration and
+              failure of the project.
+            </td>
+          </tr>
+          <tr>
+            <th>Quality</th>
+            <td>
+              Our team is full of expert people in their area and we have end to
+              end system to provide comperhensive services, so dont worry about
+              your quality of the product that we working on!
+            </td>
+            <td>
+              The system could be not there yet, especially if you hire
+              freelancer or just 1 person, besides it will take the more long
+              hour of work towards proggress of the project.
+            </td>
+          </tr>
+        </table>
+        <h2>What You Are Waiting For?!</h2>
+        <button id="contactusnow" onclick="goToContact()">
+          <h3 style="margin: 0">Contact Us Now!!</h3>
+        </button>
+      </div>
     </main>
-    <footer>Copyright L Corporation</footer>
+    <footer>Copyright © L Corporation</footer>
     <script>
-      let slideIndex = 1;
-      showSlides(slideIndex);
-
-      // Next/previous controls
-      function plusSlides(n) {
-        showSlides((slideIndex += n));
-      }
-
       // Thumbnail image controls
-      function currentSlide(n) {
-        showSlides((slideIndex = n));
+      function currentSlide(page) {
+        showSlides((slideIndex = page));
       }
 
-      function showSlides(n) {
+      function showSlides(page) {
         let i;
         let slides = document.getElementsByClassName("slides-contain");
         let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {
+        if (page > slides.length) {
           slideIndex = 1;
         }
-        if (n < 1) {
+        if (page < 1) {
           slideIndex = slides.length;
         }
         for (i = 0; i < slides.length; i++) {
@@ -142,6 +352,28 @@
         }
         slides[slideIndex - 1].style.display = "flex";
         dots[slideIndex - 1].className += " active";
+      }
+
+      let slideIndex = 0;
+      changeSlides();
+
+      function changeSlides() {
+        let i;
+        let slides = document.getElementsByClassName("slides-contain");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "flex";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(changeSlides, 10000); // Change image every 2 seconds
       }
     </script>
     <script src="js/script.js"></script>
